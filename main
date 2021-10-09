@@ -1,0 +1,31 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int t, n, temp;
+    cin >> t;
+    while (t--)
+    {
+        int sum = 0, rem, count = 0;
+        cin >> n;
+        temp = n;
+        while (temp != 0)
+        {
+            count++;
+            temp = temp / 10;
+        }
+        temp = n;
+        while (temp != 0)
+        {
+            rem = temp % 10;
+            sum = sum + pow(rem, count);
+            temp = temp / 10;
+        }
+        if (sum == n)
+            cout << "Yes" << endl;
+        else 
+            cout << "No" << endl;
+    }
+    return 0;
+}
